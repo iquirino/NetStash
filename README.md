@@ -3,6 +3,10 @@ Logstash sender for .NET
 
 Send events to logstash instance via TCP
 
+Saves all events into a sqlite database to prevent loss from network issues
+
+Automatic synchronization when network connection is stablished
+
 ## Usage
 
 ```
