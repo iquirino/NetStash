@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NetStash")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Logstash sender for .NET - Send events to logstash instance via TCP")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Hewlett-Packard Company")]
+[assembly: AssemblyCompany("Igor Quirino @ Vox Tecnologia LTDA - ME")]
 [assembly: AssemblyProduct("NetStash")]
-[assembly: AssemblyCopyright("Copyright © Hewlett-Packard Company 2016")]
+[assembly: AssemblyCopyright("Copyright © Vox Tecnologia 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

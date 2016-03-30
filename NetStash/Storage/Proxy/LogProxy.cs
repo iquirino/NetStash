@@ -28,7 +28,7 @@ namespace NetStash.Storage.Proxy
         {
             Entities.Log getLog;
             using (IDbConnection db = base.GetConnection())
-                getLog = db.QueryFirstOrDefault<Entities.Log>("SELECT IdLog, Message from Log order by IdLog asc LIMIT 1");
+                getLog = db.Query<Entities.Log>("SELECT IdLog, Message from Log order by IdLog asc LIMIT 1").FirstOrDefault();
 
             if (getLog == null)
             {

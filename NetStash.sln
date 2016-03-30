@@ -22,8 +22,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{6B7E0594-D317-42B0-ADD4-37FF60660FD3}"
 	ProjectSection(SolutionItems) = preProject
 		Nuget\Logo-Full.png = Nuget\Logo-Full.png
-		Nuget\NetStash.dll.nuspec = Nuget\NetStash.dll.nuspec
-		Nuget\nuget.exe = Nuget\nuget.exe
+		NetStash\NetStash.1.0.0.0.nupkg = NetStash\NetStash.1.0.0.0.nupkg
+		NetStash\nuget.bat = NetStash\nuget.bat
+		NetStash\nuget.exe = NetStash\nuget.exe
 	EndProjectSection
 EndProject
 Global
