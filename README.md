@@ -7,6 +7,14 @@ Saves all events into a sqlite database to prevent loss from network issues
 
 Automatic synchronization when network connection is stablished
 
+## Installation
+
+Nugget Package: https://www.nuget.org/packages/NetStash
+
+```
+PM > Install-Package NetStash
+```
+
 ## Usage
 
 ```
