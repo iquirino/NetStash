@@ -27,6 +27,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{6B7E0594
 		NetStash\nuget.exe = NetStash\nuget.exe
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{56D2CBA3-B7F2-44D6-801F-D31795D8DF68}"
+	ProjectSection(SolutionItems) = preProject
+		External\Mono.Data.Sqlite.dll = External\Mono.Data.Sqlite.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
