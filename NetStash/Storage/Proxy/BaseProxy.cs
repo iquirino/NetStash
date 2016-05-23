@@ -1,8 +1,8 @@
-﻿using Mono.Data.Sqlite;
+﻿//using Mono.Data.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SQLite;
+//using System.Data.SQLite;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -31,7 +31,7 @@ namespace NetStash.Storage.Proxy
                 {
                     if (!IsRunningOnMono())
                     {
-                        SQLiteConnection.CreateFile(dbFilePath);
+                        System.Data.SQLite.SQLiteConnection.CreateFile(dbFilePath);
 
                         if (!Directory.Exists("x86"))
                         {
@@ -45,21 +45,21 @@ namespace NetStash.Storage.Proxy
                             SaveToDisk("NetStash.x64.SQLite.Interop.dll", "x64\\SQLite.Interop.dll");
                         }
 
-                        using (SQLiteConnection cnn = (SQLiteConnection)GetConnection())
+                        using (System.Data.SQLite.SQLiteConnection cnn = (System.Data.SQLite.SQLiteConnection)GetConnection())
                         {
                             cnn.Open();
-                            SQLiteCommand cmd = new SQLiteCommand("CREATE TABLE \"Log\" ([IdLog] integer, [Message] nvarchar, PRIMARY KEY(IdLog));", cnn);
+                            System.Data.SQLite.SQLiteCommand cmd = new System.Data.SQLite.SQLiteCommand("CREATE TABLE \"Log\" ([IdLog] integer, [Message] nvarchar, PRIMARY KEY(IdLog));", cnn);
                             cmd.ExecuteNonQuery();
                         }
                     }
                     else
                     {
-                        SqliteConnection.CreateFile(dbFilePath);
+                        Mono.Data.Sqlite.SqliteConnection.CreateFile(dbFilePath);
 
-                        using (SqliteConnection cnn = (SqliteConnection)GetConnection())
+                        using (Mono.Data.Sqlite.SqliteConnection cnn = (Mono.Data.Sqlite.SqliteConnection)GetConnection())
                         {
                             cnn.Open();
-                            SqliteCommand cmd = new SqliteCommand("CREATE TABLE \"Log\" ([IdLog] integer, [Message] nvarchar, PRIMARY KEY(IdLog));", cnn);
+                            Mono.Data.Sqlite.SqliteCommand cmd = new Mono.Data.Sqlite.SqliteCommand("CREATE TABLE \"Log\" ([IdLog] integer, [Message] nvarchar, PRIMARY KEY(IdLog));", cnn);
                             cmd.ExecuteNonQuery();
                         }
                     }
@@ -72,9 +72,9 @@ namespace NetStash.Storage.Proxy
         internal IDbConnection GetConnection()
         {
             if (!IsRunningOnMono())
-                return new SQLiteConnection(string.Format("Data Source={0};Version=3;", dbFilePath));
+                return new System.Data.SQLite.SQLiteConnection(string.Format("Data Source={0};Version=3;", dbFilePath));
             else
-                return new SqliteConnection(string.Format("Data Source={0};Version=3;", dbFilePath));
+                return new Mono.Data.Sqlite.SqliteConnection(string.Format("Data Source={0};Version=3;", dbFilePath));
         }
 
         private void SaveToDisk(string file, string name)
