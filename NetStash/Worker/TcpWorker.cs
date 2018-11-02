@@ -23,7 +23,10 @@ namespace NetStash.Worker
         public static void Initialize(string logstashAddressIp, int logstashAddressPort)
         {
             if (string.IsNullOrWhiteSpace(logstashAddressIp))
-                throw new ArgumentNullException("logstashAddressIp");
+                throw new ArgumentNullException("logstashAddressIp", "You need to inform a host address");
+
+            if (logstashAddressPort <= 0)
+                throw new ArgumentOutOfRangeException("logstashAddressPort", logstashAddressPort, "You need to inform a valid port number");
 
             logstashIp = logstashAddressIp;
             logstashPort = logstashAddressPort;
@@ -42,7 +45,7 @@ namespace NetStash.Worker
                     lock (_lock)
                         isRunning = true;
 
-                    while (isRunning)
+                    while (isRunning && !stopCalled)
                     {
                         try
                         {
@@ -93,10 +96,10 @@ namespace NetStash.Worker
                 }
             }
 
-            Send(evs, UpdateEntry);
+            Send(evs, RemoveEntry);
         }
 
-        private static void UpdateEntry(long id)
+        private static void RemoveEntry(long id)
         {
             Storage.Proxy.LogProxy proxy = new Storage.Proxy.LogProxy();
             proxy.Delete(id);

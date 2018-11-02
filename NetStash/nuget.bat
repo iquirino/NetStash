@@ -1,1 +1,0 @@
-nuget pack NetStash.csproj -Prop Configuration=Release -Properties OutDir="bin\\Release\\"

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetStash", "NetStash\NetStash.csproj", "{0269533A-F063-4572-8C54-9B3B34E6EAB9}"
 EndProject
@@ -22,14 +22,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{6B7E0594-D317-42B0-ADD4-37FF60660FD3}"
 	ProjectSection(SolutionItems) = preProject
 		Nuget\Logo-Full.png = Nuget\Logo-Full.png
-		NetStash\NetStash.1.0.0.0.nupkg = NetStash\NetStash.1.0.0.0.nupkg
-		NetStash\nuget.bat = NetStash\nuget.bat
-		NetStash\nuget.exe = NetStash\nuget.exe
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{56D2CBA3-B7F2-44D6-801F-D31795D8DF68}"
-	ProjectSection(SolutionItems) = preProject
-		External\Mono.Data.Sqlite.dll = External\Mono.Data.Sqlite.dll
+		Nuget\nuget.bat = Nuget\nuget.bat
+		Nuget\nuget.exe = Nuget\nuget.exe
 	EndProjectSection
 EndProject
 Global
@@ -52,5 +46,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8F850AF6-399F-48B5-85A9-8CAD98EC34E0} = {F7B5EA42-9917-44B8-A290-36ADA2F39662}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8683FA7-B90C-4BC0-9EA4-338B63EE0AE0}
 	EndGlobalSection
 EndGlobal
