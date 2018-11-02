@@ -18,7 +18,7 @@ PM > Install-Package NetStash
 ## Usage
 
 ```
-NetStashLog log = new NetStashLog("brspomelkq01.la.imtn.com", 1233, "NSTest", "NSTestLog");
+NetStashLog log = new NetStashLog("myhostname", 1233, "NSTest", "NSTestLog");
 
 Dictionary<string, string> vals = new Dictionary<string, string>();
 //Additional fields
@@ -33,7 +33,7 @@ log.Error("Testing", vals);
 input {
   tcp {
     port => 1233
-    host => "10.32.12.52"
+    host => "192.168.0.151"
     codec => json
   }
 }
