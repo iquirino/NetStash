@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NetStash")]
-[assembly: AssemblyDescription("Logstash sender for .NET - Send events to logstash instance via TCP")]
+[assembly: AssemblyDescription("Logstash sender for .NET - Send events to logstash instance via TCP/TLS")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Igor Quirino @ Vox Tecnologia LTDA - ME")]
+[assembly: AssemblyCompany("Igor Quirino @ WareBoss LTDA - ME")]
 [assembly: AssemblyProduct("NetStash")]
-[assembly: AssemblyCopyright("Copyright © Vox Tecnologia 2016")]
+[assembly: AssemblyCopyright("Copyright © WareBoss 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.0.0")]
-[assembly: AssemblyFileVersion("1.2.0.0")]
+[assembly: AssemblyVersion("1.3.0.0")]
+[assembly: AssemblyFileVersion("1.3.0.0")]
