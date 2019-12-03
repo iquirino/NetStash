@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Security;
+using System.Security.Authentication;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +15,25 @@ namespace NetStash.Log
         private int logstashPort = -1;
         private string logname = string.Empty;
         private string system = string.Empty;
+
+        public NetStashLog(string logstashIp, int logstashPort, SslProtocols protocol, X509CertificateCollection certificates, string serverCertificateName, string system, string logname = "NetStashLogs", RemoteCertificateValidationCallback certificateValidation = null)
+        {
+            if (string.IsNullOrWhiteSpace(logstashIp))
+                throw new ArgumentNullException("logstashIp");
+
+            if (string.IsNullOrWhiteSpace(logname))
+                throw new ArgumentNullException("logname");
+
+            if (string.IsNullOrWhiteSpace(system))
+                throw new ArgumentNullException("system");
+
+            Worker.TcpWorker.Initialize(logstashIp, logstashPort, protocol, certificates, serverCertificateName, certificateValidation);
+
+            this.logstashIp = logstashIp;
+            this.logstashPort = logstashPort;
+            this.logname = logname;
+            this.system = system;
+        }
 
         public NetStashLog(string logstashIp, int logstashPort, string system, string logname = "NetStashLogs")
         {
